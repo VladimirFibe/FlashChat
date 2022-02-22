@@ -8,8 +8,10 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-  let titleLabel: UILabel = {
-    let label = UILabel()
+  // MARK: - Properties
+  
+  let titleLabel: CLTypingLabel = {
+    let label = CLTypingLabel()
     label.text = "⚡️FlashChat"
     label.textColor = UIColor(named: "BrandBlue")
     label.font = .systemFont(ofSize: 50, weight: .black)
@@ -22,8 +24,6 @@ class WelcomeViewController: UIViewController {
     button.setTitleColor(UIColor(named: "BrandBlue"), for: .normal)
     button.titleLabel?.font = .systemFont(ofSize: 30)
     button.backgroundColor = UIColor(named: "BrandLightBlue")
-    button.translatesAutoresizingMaskIntoConstraints = false
-    button.heightAnchor.constraint(equalToConstant: 61).isActive = true
     button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
     return button
   }()
@@ -34,30 +34,17 @@ class WelcomeViewController: UIViewController {
     button.setTitleColor(.white, for: .normal)
     button.titleLabel?.font = .systemFont(ofSize: 30)
     button.backgroundColor = .systemTeal
-    button.translatesAutoresizingMaskIntoConstraints = false
-    button.heightAnchor.constraint(equalToConstant: 61).isActive = true
     button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
     return button
   }()
+
+  // MARK: - Lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .systemBackground
-    view.addSubview(titleLabel)
-    titleLabel.translatesAutoresizingMaskIntoConstraints = false
-    titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    
-    view.addSubview(loginButton)
-    loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-    loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-    loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
-    
-    view.addSubview(registerButton)
-    registerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-    registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-    registerButton.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -8).isActive = true
+    configureUI()
   }
+  // MARK: - Selectors
   
   @objc func handleRegister() {
     let viewController = RegisterViewController()
@@ -67,5 +54,18 @@ class WelcomeViewController: UIViewController {
   @objc func handleLogin() {
     let viewController = LoginViewController()
     navigationController?.pushViewController(viewController, animated: true)
+  }
+  
+  // MARK: - Helpers
+  func configureUI() {
+    view.backgroundColor = .systemBackground
+    view.addSubview(titleLabel)
+    titleLabel.center(inView: view)
+    
+    view.addSubview(loginButton)
+    loginButton.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: 50, height: 61)
+
+    view.addSubview(registerButton)
+    registerButton.anchor(left: view.leftAnchor, bottom: loginButton.topAnchor, right: view.rightAnchor, paddingBottom: 8, height: 61)
   }
 }

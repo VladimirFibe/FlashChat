@@ -6,18 +6,21 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
   // MARK: - Properties
   
   private let emailTextField: UITextField = {
     let textField = UITextField()
+    textField.text = "fibe_v@mail.ru"
     textField.placeholder = "Email"
     return textField
   }()
   
   private let passwordTextField: UITextField = {
     let textField = UITextField()
+    textField.text = "123456"
     textField.placeholder = "Password"
     textField.isSecureTextEntry = true
     return textField
@@ -45,7 +48,16 @@ class LoginViewController: UIViewController {
   // MARK: - Selectors
   
   @objc func loginPressed() {
-    print("DEBUG: Login")
+    guard let email = emailTextField.text else { return }
+    guard let password = passwordTextField.text else { return }
+    Auth.auth().signIn(withEmail: email, password: password) { result, error in
+      if let error = error {
+        print("DEBUG: \(error.localizedDescription)")
+      } else {
+        let viewController = ChatViewController ()
+        self.navigationController?.pushViewController(viewController, animated: true)
+      }
+    }
   }
   
   // MARK: - Helpers

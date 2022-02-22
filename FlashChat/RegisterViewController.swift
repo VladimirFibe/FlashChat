@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController {
   // MARK: - Properties
@@ -45,7 +46,16 @@ class RegisterViewController: UIViewController {
   // MARK: - Selectors
   
   @objc func registerPressed() {
-    print("DEBUG: Register")
+    guard let email = emailTextField.text else { return }
+    guard let password = passwordTextField.text else { return }
+    Auth.auth().createUser(withEmail: email, password: password) { result, error in
+      if let error = error {
+        print("DEBUG: \(error.localizedDescription)")
+      } else {
+        let viewController = ChatViewController ()
+        self.navigationController?.pushViewController(viewController, animated: true)
+      }
+    }
   }
   
   // MARK: - Helpers
