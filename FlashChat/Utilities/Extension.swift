@@ -83,3 +83,10 @@ extension UIView {
              bottom: view.bottomAnchor, right: view.rightAnchor)
   }
 }
+
+extension UIColor {
+  static let brandBlue = UIColor(named: "BrandBlue")
+  static let brandLightBlue = UIColor(named: "BrandLightBlue")
+  static let brandLightPurple = UIColor(named: "BrandLightPurple")
+  static let brandPurple = UIColor(named: "BrandPurple")
+}

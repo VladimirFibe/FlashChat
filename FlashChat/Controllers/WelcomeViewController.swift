@@ -6,14 +6,15 @@
 //
 
 import UIKit
+import Firebase
 
 class WelcomeViewController: UIViewController {
   // MARK: - Properties
   
   let titleLabel: CLTypingLabel = {
     let label = CLTypingLabel()
-    label.text = "⚡️FlashChat"
-    label.textColor = UIColor(named: "BrandBlue")
+    label.text = Constants.appName
+    label.textColor = .brandBlue
     label.font = .systemFont(ofSize: 50, weight: .black)
     return label
   }()
@@ -21,9 +22,9 @@ class WelcomeViewController: UIViewController {
   let registerButton: UIButton = {
     let button = UIButton(type: .system)
     button.setTitle("Register", for: .normal)
-    button.setTitleColor(UIColor(named: "BrandBlue"), for: .normal)
+    button.setTitleColor(.brandBlue, for: .normal)
     button.titleLabel?.font = .systemFont(ofSize: 30)
-    button.backgroundColor = UIColor(named: "BrandLightBlue")
+    button.backgroundColor = .brandLightBlue
     button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
     return button
   }()
@@ -39,9 +40,21 @@ class WelcomeViewController: UIViewController {
   }()
 
   // MARK: - Lifecycle
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    navigationController?.isNavigationBarHidden = true
+  }
   
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    navigationController?.isNavigationBarHidden = false
+  }
   override func viewDidLoad() {
     super.viewDidLoad()
+    if Auth.auth().currentUser != nil {
+      let viewController = ChatViewController()
+      navigationController?.pushViewController(viewController, animated: true)
+    }
     configureUI()
   }
   // MARK: - Selectors
