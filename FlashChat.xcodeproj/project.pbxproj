@@ -19,7 +19,6 @@
 		1FB65DED27C47144008FDD0E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB65DEC27C47144008FDD0E /* Extension.swift */; };
 		1FB6E2CA27C2807F00AE6D7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB6E2C927C2807F00AE6D7B /* AppDelegate.swift */; };
 		1FB6E2CC27C2807F00AE6D7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB6E2CB27C2807F00AE6D7B /* SceneDelegate.swift */; };
-		1FB6E2CE27C2807F00AE6D7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB6E2CD27C2807F00AE6D7B /* ViewController.swift */; };
 		1FB6E2D127C2807F00AE6D7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FB6E2CF27C2807F00AE6D7B /* Main.storyboard */; };
 		1FB6E2D327C2808100AE6D7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FB6E2D227C2808100AE6D7B /* Assets.xcassets */; };
 		1FB6E2D627C2808100AE6D7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FB6E2D427C2808100AE6D7B /* LaunchScreen.storyboard */; };
@@ -31,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		1F14EBC727C4D78D00A35DFD /* CLTypingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLTypingLabel.swift; sourceTree = "<group>"; };
-		1F14EBC927C4EA7700A35DFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1F14EBC927C4EA7700A35DFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1F14EBD127C5075700A35DFD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1F14EBD427C50CB000A35DFD /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		1F6E6D2B27C525010085852E /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
@@ -40,7 +39,6 @@
 		1FB6E2C627C2807F00AE6D7B /* FlashChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FB6E2C927C2807F00AE6D7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FB6E2CB27C2807F00AE6D7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1FB6E2CD27C2807F00AE6D7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1FB6E2D027C2807F00AE6D7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FB6E2D227C2808100AE6D7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FB6E2D527C2808100AE6D7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,16 +100,6 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		1F14EBDA27C50D5300A35DFD /* Old */ = {
-			isa = PBXGroup;
-			children = (
-				1FB6E2D427C2808100AE6D7B /* LaunchScreen.storyboard */,
-				1FB6E2CF27C2807F00AE6D7B /* Main.storyboard */,
-				1FB6E2CD27C2807F00AE6D7B /* ViewController.swift */,
-			);
-			path = Old;
-			sourceTree = "<group>";
-		};
 		1F6E6D2A27C524E30085852E /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,7 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				1FB6E2C827C2807F00AE6D7B /* FlashChat */,
-				1F14EBC927C4EA7700A35DFD /* GoogleService-Info.plist */,
 				1FB6E2C727C2807F00AE6D7B /* Products */,
 				1F14EBCE27C4EB4F00A35DFD /* Frameworks */,
 			);
@@ -141,17 +128,27 @@
 		1FB6E2C827C2807F00AE6D7B /* FlashChat */ = {
 			isa = PBXGroup;
 			children = (
-				1F6E6D2A27C524E30085852E /* Views */,
 				1FB6E2C927C2807F00AE6D7B /* AppDelegate.swift */,
 				1FB6E2CB27C2807F00AE6D7B /* SceneDelegate.swift */,
+				1F6E6D2A27C524E30085852E /* Views */,
 				1F14EBD327C50C8F00A35DFD /* Model */,
 				1F14EBD827C50CD400A35DFD /* Controllers */,
 				1F14EBD927C50CFB00A35DFD /* Utilities */,
-				1FB6E2D227C2808100AE6D7B /* Assets.xcassets */,
-				1F14EBDA27C50D5300A35DFD /* Old */,
-				1FB6E2D727C2808100AE6D7B /* Info.plist */,
+				27D9AD0929C315EC003A5513 /* Supporting Files */,
 			);
 			path = FlashChat;
+			sourceTree = "<group>";
+		};
+		27D9AD0929C315EC003A5513 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FB6E2D427C2808100AE6D7B /* LaunchScreen.storyboard */,
+				1F14EBC927C4EA7700A35DFD /* GoogleService-Info.plist */,
+				1FB6E2D227C2808100AE6D7B /* Assets.xcassets */,
+				1FB6E2CF27C2807F00AE6D7B /* Main.storyboard */,
+				1FB6E2D727C2808100AE6D7B /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +234,6 @@
 			files = (
 				1FB65DED27C47144008FDD0E /* Extension.swift in Sources */,
 				1F14EBD227C5075700A35DFD /* Constants.swift in Sources */,
-				1FB6E2CE27C2807F00AE6D7B /* ViewController.swift in Sources */,
 				1FB6E30627C2894100AE6D7B /* WelcomeViewController.swift in Sources */,
 				1F6E6D2C27C525010085852E /* MessageCell.swift in Sources */,
 				1FB6E2CA27C2807F00AE6D7B /* AppDelegate.swift in Sources */,
@@ -401,7 +397,6 @@
 				INFOPLIST_FILE = FlashChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -430,7 +425,6 @@
 				INFOPLIST_FILE = FlashChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
